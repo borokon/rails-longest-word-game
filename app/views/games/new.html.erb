@@ -1,0 +1,10 @@
+<h1>Prepare for a New Game</h1>
+<p>Here are your random letters: <%= @letters %></p>
+
+<p>What is the longest word you can find?</p>
+<form action="score" method="post" data-turbo="false">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= hidden_field_tag :original_grid, @letters %>
+  <%= text_field_tag :suggested_word, nil, required: true %>
+  <%= submit_tag "Submit" %>
+</form>
